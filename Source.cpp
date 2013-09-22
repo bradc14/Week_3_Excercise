@@ -16,37 +16,37 @@ char operand;
 		right=atof(&argv[3][i]);
 		operand=(argv[2][i]);
 
-		if (left >= 0 && right >=0 && operand !=NULL)
+		if (left >= 0 && right >=0 && operand !=NULL) //this allows decimals to be entered as well
 		{
 			switch (operand)
 			{
 			case '+':
-				std::cout << left << " + " << right << " = " << std::fixed << std::setprecision(2) << (left+right) << std::endl;
+				std::cout << left << " + " << right << " = " << (left+right) << std::endl;
 				break;
 			case '-':
-				std::cout << left << " - " << right << " = " << std::fixed << std::setprecision(2) << (left-right) << std::endl;
+				std::cout << left << " - " << right << " = " << (left-right) << std::endl;
 				break;
 			case 'x':
-				std::cout << left << " x " << right << " = " << std::fixed << std::setprecision(2) << (left*right) << std::endl;
+				std::cout << left << " x " << right << " = " << (left*right) << std::endl;
 				break;
 			case '/':
-				std::cout << left << " / " << right << " = " << std::fixed << std::setprecision(2) << (left/right) << std::endl;
+				std::cout << left << " / " << right << " = " << (left/right) << std::endl;
 				break;
 			default:
+				std::cout << "<number> <+-x/> <number>";
 				break;
 			}
 			return 0;
 		}
 		else
 		{
-			std::cout << "Error" << std::endl;
+			std::cout<< "Please verify that you are entering a number followed by a operation symbol (+ - / x ) followed by another number " << std::endl;
 			return 1;
 		}
 	}
 	else
 	{
-		std::cout<< "You have not entered enough arguments." << std::endl;
-		std::cout<< "Please veirfy that you are entering a number followed by a operation symbol (+ - / x ) followed by another number " << std::endl;
+		std::cout<< "Please verify that you are entering a number followed by a operation symbol (+ - / x ) followed by another number " << std::endl;
 		return 1;
 	}
 }
